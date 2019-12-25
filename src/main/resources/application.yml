@@ -1,0 +1,27 @@
+server:
+  port: 8229
+  jetty:
+    max-http-post-size: 4048576
+spring:
+  jackson:
+    time-zone: GMT+8
+  rabbitmq:
+    host: im.yuejia100.cn
+    post: 5672
+    username: im
+    password: im369852
+#    host: im.hejuzg.cn
+#    post: 5672
+#    username: js
+#    password: 123456
+    listener:
+      simple:
+        acknowledge-mode: auto #采用自动应答
+        retry:
+          enabled: true #是否支持重试
+        concurrency: 50
+        max-concurrency: 100
+  main:
+    allow-bean-definition-overriding: true
+
+
